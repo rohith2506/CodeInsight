@@ -1,0 +1,50 @@
+------------------------------------------------------------------
+User
+
+user_id , username , name , email , passsword_digest , remember_token , rating
+
+------------------------------------------------------------------
+Contest
+
+contest_id , name , organizer , start , end , #problems , type
+
+------------------------------------------------------------------
+Problem
+
+problem_id , contest_id , author , solution_id , level , timestamp , problem_statement , constraints , testcase_file_url , solution_file_url , tags 
+
+------------------------------------------------------------------
+Tutorial
+
+tutorial_id , user_id , author , time , hits , upvotes , text_field
+
+------------------------------------------------------------------
+Solution
+
+solution_id , user_id , problem_id , author , text_field , upvotes
+
+------------------------------------------------------------------
+Submission
+
+submission_id , user_id , contest_id , problem_id , language , status , runtime , timestamp 
+
+------------------------------------------------------------------
+Category
+
+category_id , name
+
+
+==================================================================
+
+Relationships :
+
+User -->> Contest 		# Each user can participate in many contests
+Contest -->> User 		# Each contests can have many participants
+Contest -->> Problem 	# Each contest can have many problems
+Problem -->> Category	# Each problem has multiple categories
+Tutorial -->> Category	# Each tutorial has multiple categories
+
+
+/*
+	Relationships other than mentioned here are all static and need not be changed dynamically and hence are a part of the model's database itself.
+ */
