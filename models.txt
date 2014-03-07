@@ -1,32 +1,46 @@
 ------------------------------------------------------------------
 User
 
-user_id , username , name , email , passsword_digest , remember_token , rating
+user_id:int ,username:string , name:string , email:string , passsword_digest:string , remember_token:string , rating:real
 
 ------------------------------------------------------------------
 Contest
 
-contest_id , name , organizer , start , end , #problems , type
+contest_id:int , name:string , organizer:string , start:date-time , end:date-time , #problems:int , type:int
 
 ------------------------------------------------------------------
 Problem
 
+<<<<<<< HEAD
+problem_id:int , user_id:int , level:string , timestamp , problem_statement:string , constraints:string , testcase_file_url , solution_file_url , tags 
+=======
 problem_id , contest_id , author , solution_id , level , timestamp , problem_statement , constraints , testcase_file_url , solution_file_url , tags 
+>>>>>>> f6867cf9f1b5eefd5c23ad000af271407aca6367
 
 ------------------------------------------------------------------
 Tutorial
 
+<<<<<<< HEAD
+tutorial_id:int , user_id:int , timestamp , hits:int , upvotes:int , text_field:string
+=======
 tutorial_id , user_id , author , time , hits , upvotes , text_field
+>>>>>>> f6867cf9f1b5eefd5c23ad000af271407aca6367
 
 ------------------------------------------------------------------
 Solution
 
-solution_id , user_id , problem_id , author , text_field , upvotes
+solution_id:int , user_id:int , problem_id:int , text_field;string , upvotes:int , downvotes:int
 
 ------------------------------------------------------------------
 Submission
 
-submission_id , user_id , contest_id , problem_id , language , status , runtime , timestamp 
+submission_id:int , user_id:int , contest_id:int , problem_id:int , language:int , code:string , status_id:int , runtime:time , memory:int , timestamp  
+status_id:int , status:string
+
+------------------------------------------------------------------
+Category
+
+category_id:int , name:string
 
 ------------------------------------------------------------------
 Category
@@ -38,11 +52,19 @@ category_id , name
 
 Relationships :
 
+<<<<<<< HEAD
+Contest <<-->> User 		# Each contests can have many participants , Each user can participate in many contests
+Contest -->> Problem 		# Each contest can have many problems
+Problem -->> Solution 		# Each problem can have many solutions
+Problem -->> Category 		# 
+Tutorial -->> Category  	#		
+=======
 User -->> Contest 		# Each user can participate in many contests
 Contest -->> User 		# Each contests can have many participants
 Contest -->> Problem 	# Each contest can have many problems
 Problem -->> Category	# Each problem has multiple categories
 Tutorial -->> Category	# Each tutorial has multiple categories
+>>>>>>> f6867cf9f1b5eefd5c23ad000af271407aca6367
 
 
 /*
