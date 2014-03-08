@@ -13,6 +13,11 @@ class User < ActiveRecord::Base
 
 	has_secure_password
 
+	before_save do
+					self.username=username.downcase
+					self.email=email.downcase 
+				end
+
 	def username_cannot_have_whitespaces
 		if(self.username==nil)
 			return
