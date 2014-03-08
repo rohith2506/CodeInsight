@@ -11,20 +11,12 @@ contest_id:int , name:string , organizer:string , start:date-time , end:date-tim
 ------------------------------------------------------------------
 Problem
 
-<<<<<<< HEAD
-problem_id:int , user_id:int , level:string , timestamp , problem_statement:string , constraints:string , testcase_file_url , solution_file_url , tags 
-=======
-problem_id , contest_id , author , solution_id , level , timestamp , problem_statement , constraints , testcase_file_url , solution_file_url , tags 
->>>>>>> f6867cf9f1b5eefd5c23ad000af271407aca6367
+problem_id:int , user_id:int , level:string , timestamp , problem_statement:string , constraints:string , testcase_file_url , solution_file_url
 
 ------------------------------------------------------------------
 Tutorial
 
-<<<<<<< HEAD
 tutorial_id:int , user_id:int , timestamp , hits:int , upvotes:int , text_field:string
-=======
-tutorial_id , user_id , author , time , hits , upvotes , text_field
->>>>>>> f6867cf9f1b5eefd5c23ad000af271407aca6367
 
 ------------------------------------------------------------------
 Solution
@@ -42,29 +34,15 @@ Category
 
 category_id:int , name:string
 
-------------------------------------------------------------------
-Category
-
-category_id , name
-
-
-==================================================================
+===================================================================
 
 Relationships :
 
-<<<<<<< HEAD
-Contest <<-->> User 		# Each contests can have many participants , Each user can participate in many contests
-Contest -->> Problem 		# Each contest can have many problems
-Problem -->> Solution 		# Each problem can have many solutions
-Problem -->> Category 		# 
-Tutorial -->> Category  	#		
-=======
-User -->> Contest 		# Each user can participate in many contests
-Contest -->> User 		# Each contests can have many participants
-Contest -->> Problem 	# Each contest can have many problems
-Problem -->> Category	# Each problem has multiple categories
-Tutorial -->> Category	# Each tutorial has multiple categories
->>>>>>> f6867cf9f1b5eefd5c23ad000af271407aca6367
+Contest <<-->> User 		
+Contest -->> Problem 		
+Problem -->> Solution 		
+Problem -->> Category 		
+Tutorial -->> Category  	
 
 
 /*
