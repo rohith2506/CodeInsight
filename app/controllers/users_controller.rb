@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 	include ApplicationHelper
+
+	before_action :signed_in_user, only: [:edit,:update]
+	#before_action :correct_user,	only:[:edit,:update]
 	def new
 		@user=User.new
 	end
@@ -7,7 +10,8 @@ class UsersController < ApplicationController
 	def create
 		@user=User.new(user_params)
 		if @user.save
-			#handle a successful save
+			sign_in @user
+			flash.now[:success]='Welcome to CodeInsights'
 		else
 			render 'new'
 		end
@@ -39,5 +43,16 @@ class UsersController < ApplicationController
 
 		def user_params_for_update
 			params.require(:user).permit(:name,:email,:password,:password_confirmation)
+		end
+
+		#before filters
+
+		def signed_in_user
+			redirect_to signin_url, notice: "Please Sign in." unless signed_in?
+		end
+
+		def correct_user
+			@user=User.find(params[:id])
+			redirect_to(root_url) unless current_user?(@user)
 		end
 end
