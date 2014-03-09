@@ -1,4 +1,5 @@
 module ApplicationHelper
+
 	def full_title(page_title)
 		base_title = "CodeInsight"
 		if(page_title.empty?)
@@ -8,3 +9,4 @@ module ApplicationHelper
 		end
 	end
 end
+
