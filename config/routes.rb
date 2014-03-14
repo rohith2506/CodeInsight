@@ -1,5 +1,6 @@
 CodeInsight::Application.routes.draw do
 
+  root "static_pages#home"
   get "static_pages/home"
   get "static_pages/about"
   
@@ -9,6 +10,7 @@ CodeInsight::Application.routes.draw do
   match '/users/*username/edit', to:'users#edit', via:'get'
   match '/signin',  to:'sessions#new',  via:'get'
   match '/signout', to:'sessions#destroy', via:'delete'
+  match '/testing', to:'static_pages#testing', via:'get'
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 

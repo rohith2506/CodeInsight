@@ -5,7 +5,7 @@
 	<div class="middle-divider">
 
 	</div>
-	<% (0..5).each do |i|%>
+	<% (0..2).each do |i|%>
 	<div class="line" id="line<%=i%>">
 		<div class="left-field">
 			<div class="left-wrapper ">
@@ -16,16 +16,23 @@
 				</div>
 			</div>
 		</div>
-		<div class="right-field">
+		<div class="right-field" id="rf">
 			<div class="right-wrapper">
 				<div class="left-arrow" id="larrow<%=i%>">
 				</div> 
-				<div class="right-info wrapword">
-					<div class="card-front wrapword">
+				<div id="card-container"class="right-info wrapword " style="position:relative;">
+					<div class="card-front wrapword " id="cf<%=i%>">
 						=====right-info>>>>>>>>>>>>>>>>>><br>
 						=====right-info>>>>>>>>>>>>>>>>>><br>
 						=====right-info>>>>>>>>>>>>>>>>>><br>
 						=====right-info>>>>>>>>>>>>>>>>>><br>
+					</div>
+					<div class="card-back wrapword " id="cb<%=i%>" 
+						style="position:absolute;top:0px;left:0px;z-index:-2;">
+						back card<br>
+						back card<br>
+						back card<br>
+						back card
 					</div>
 				</div>
 			</div>
@@ -50,6 +57,8 @@
 			document.getElementById("rarrow<%=i%>").style.marginTop=(h/2 -  13)+"px";
 			hmy=document.getElementById("linfo<%=i%>").clientHeight;
 			document.getElementById("linfo<%=i%>").style.marginTop=((h -  hmy)/2)+"px";
+			h=document.getElementById("cf<%=i%>").clientHeight;
+			document.getElementById("cb<%=i%>").style.height=(h-20)+"px";
 		<% end %>
 	</script>
 </div>

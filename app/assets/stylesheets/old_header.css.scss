@@ -1,0 +1,103 @@
+@import "bootstrap";
+
+$header_height: 60px;
+
+header
+{
+	position:fixed;
+	right:0;
+	left:0;
+	top:0;
+	border-style:ridge;
+	border-color:red;
+	border-width:0 0 5px;
+	padding:2px;
+	margin:10px;
+}
+header div
+{
+	float:left;
+}
+#authentication-div
+{
+	width:20%;
+	height: 100%;
+	background-color:pink;
+	max-height: $header_height;
+}
+#header-center
+{
+	width: 65%;
+	height:100%;
+	background-color: yellow;
+	max-height: $header_height;
+}
+#logo-div
+{
+	float:right;
+	width:15%;
+	background-color: green;
+	max-height: $header_height
+}
+.navigation-bar
+{
+	width:100%;
+
+	text-align: center;
+	margin-bottom: 0px;
+	margin-top: auto;
+}
+.center-tabs
+{
+	width: 100%;
+	margin:0 auto;
+	display: inline-block;
+}
+
+.navigation-bar ul
+{
+	margin:0;
+	list-style-type: none;	
+
+}
+.navigation-bar li
+{
+	display:inline;		
+	margin: 2%;
+	font-size: 20px;
+}
+.navigation-bar a
+{
+	background-color: cyan;
+	padding:0%;	
+}
+#site-logo
+{
+	display: block;
+	margin: auto;
+	max-height: $header_height;	
+}
+#header-center h2
+{
+	font-size: 30px;
+
+}
+.navigation-bar a:hover
+{
+	color:red;
+}
+#profile-thumbnail
+{
+	max-height: $header_height;
+}
+#signed-in-div *
+{
+	float:left;
+}
+/* just temporarily */
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}

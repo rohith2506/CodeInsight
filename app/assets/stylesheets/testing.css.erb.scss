@@ -1,0 +1,205 @@
+
+$middle_divider_width : 5px;
+$middle_divider_position:20%;
+$arrow-width:9px;
+.timeline-container
+{
+	height:100%;
+	width:100%;
+	position:relative;
+	font-family: BIO;
+	font-size: 20px;
+	
+	/*background:  url(https://cdn.mxpnl.com/cache/edaeb8e0378efb274b717d49aa5db114/images/static/purple_grid.png) #323355; */
+	
+	/*background-color: #323355;/*#99FF99;*/
+	/*text-align: center;*/
+}
+.middle-divider
+{
+	position:absolute;
+	width:  $middle_divider_width;
+	min-height: 100%;
+	max-height: 100%;
+	margin-left: $middle_divider_position;
+	
+	z-index: 0;
+	float:left;
+	background: rgba(24, 49, 235, 1);
+}
+.line
+{
+	display: inline-block;
+	margin:auto;
+	width: 100%;
+}
+.left-field
+{
+	float:left;
+	width:$middle_divider_position;
+	max-width: 30%;
+	margin-right: $middle_divider_width;
+}
+.right-field
+{	
+	max-width: 60%;
+	/*margin-left: 30%;*/
+	float:left;
+}
+.left-wrapper
+{
+	float:right;
+	max-width: 100%;
+
+}
+
+.right-wrapper
+{
+	float:left;
+}
+.center-marker
+{
+	position: absolute;
+	left:50%;
+}
+.right-arrow
+{
+	width:9px;
+	height: 26px;
+	float:right;
+	background: url(/assets/arrow.png);
+}
+.left-arrow
+{
+	width:9px;
+	height: 26px;
+	float:left;
+	background: url(/assets/arrow.png) -9px 0;
+}
+
+.left-info
+{
+	background-color: black;
+	margin-right: $arrow-width;
+	color: cornsilk;
+	border-radius: 10px;
+}
+.right-info
+{
+	
+	margin-left: $arrow-width;
+	
+}
+.wrapword{
+white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+white-space: -pre-wrap;      /* Opera 4-6 */
+white-space: -o-pre-wrap;    /* Opera 7 */
+white-space: pre-wrap;       /* css-3 */
+word-wrap: break-word;       /* Internet Explorer 5.5+ */
+word-break: break-all;
+white-space: normal;
+}
+div.error-label{
+    padding:10px;
+    color: #fff;
+    background-color: orange;
+    -webkit-border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    border-radius: 5px;
+    width:190px;
+    margin:0px;
+    float:right;
+}
+
+div.error-label:before {
+content: ' ';
+	height: 0;
+	
+	width: 0;
+    
+	border: 10px solid transparent;
+	border-right-color: #DA362A;
+}
+
+.card-front, .card-back
+{
+	border-radius: 10px;
+	background-color: rgb(130, 133, 124);
+	padding: 10px;
+	max-width: 100%;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+
+	-webkit-transform: scale(1);
+	-webkit-transform: translate3D(0, 0, 0);
+	-webkit-transform:rotateY(0deg);
+
+	-webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-backface-visibility:    hidden;
+    -ms-backface-visibility:     hidden;
+    
+    
+
+   -webkit-transition: -webkit-transform 1s ease-in;
+   -moz-transition: -moz-transform 1s ease-in;
+   -ms-transition: -ms-transform 1s ease-in;
+    width: 100%;
+    height: 100%;   
+    /*font-family: Helvetica, Arial, sans-serif;*/
+    /*color: #fff;    */
+    font-weight: bold;
+    box-shadow: inset 0px 0px 20px rgba(0,0,0,0.4);
+}
+.card-back {
+    -webkit-transform: rotateX(180deg);
+    -moz-transform: rotateX(180deg);
+  -ms-transform: rotateX(180deg);
+	background: #7f37c2;
+    overflow: hidden;
+}   
+.card-front
+{
+	background: #7f37c2;
+}
+.left-arrow
+{
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transform: scale(1);
+	-webkit-transform: translate3D(0, 0, 0);
+	-webkit-transform:rotateY(0deg);
+	-webkit-transition: -webkit-transform 1s ease-in;
+   -moz-transition: -moz-transform 1s ease-in;
+   -ms-transition: -ms-transform 1s ease-in;
+}
+
+#rf:hover .card-front
+{      
+	-webkit-transform: rotateX(-180deg);
+    -moz-transform: rotateX(-180deg);
+    -ms-transform: rotateX(-180deg);
+}
+#rf:hover .card-back
+{      
+	-webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    -ms-transform: rotateX(0deg);
+}
+#rf:hover .left-arrow
+{
+	-webkit-transform: rotateX(-180deg);
+    -moz-transform: rotateX(-180deg);
+    -ms-transform: rotateX(-180deg);	
+}
+
+
+
+@font-face 
+{ 
+
+	font-family: BIO; 
+	src: url('<%= asset_path("BIO.otf") %>'); 
+} 
+
+/* @font-face { font-family: Delicious; font-weight: bold; src: url('Delicious-Bold.otf');}*/

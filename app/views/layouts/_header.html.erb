@@ -1,0 +1,41 @@
+<header>
+	<script >
+		function toggleSlider()
+		{
+
+			if(document.getElementById("slider").style.maxHeight=="0px")
+				document.getElementById("slider").style.maxHeight="500px";
+			else
+				document.getElementById("slider").style.maxHeight='0px';
+		}
+		//document.getElementById('slider').classList.toggle('closed');
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+		$("#details1").hide();
+		$("#toggler").hover( function() {
+
+			$("#slider").slideToggle('2000',"linear", function () {
+        		// Animation complete.
+    			});
+			});
+		});
+	</script>
+	<div id="header-contents">
+
+	</div>
+	<div id="toggler">
+		
+	
+		<div id="slider" class="slider">
+			<button>Sign in</button>
+			<br>
+			<button>Sign up</button>
+		</div>
+		<div id="toggler-bar"
+	    	style="background-color:green; min-width:10px;">
+	    
+		</div>
+	</div>
+</header>
